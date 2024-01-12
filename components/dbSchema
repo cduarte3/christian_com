@@ -1,0 +1,77 @@
+var mongoose = require("mongoose");
+var Schema = mongoose.Schema;
+const MONGO = process.env.MONGO_CONNECTION;
+
+var reviewSchema = new Schema({
+    "review": String,
+    "rating": Number,
+    "date": Date
+});
+
+let Review;
+
+module.exports.initialize = function () {
+    console.log("Initialization of DB");
+    return new Promise(function (resolve, reject) {
+        let db = mongoose.createConnection(`${MONGO}`);
+
+        db.on('error', (err) => {
+            reject(err);
+        });
+        db.once('open', () => {
+            console.log("hello");
+            Review = db.model("reviews", reviewSchema);
+            resolve();
+        });
+    });
+}
+
+module.exports.createReview = function (reviewData) {
+    return new Promise(function (resolve, reject) {
+        if (reviewData.review === "" || reviewData.rating === "") {
+            reject("Error: Review and/or rating must not be empty!");
+        }
+        else {
+            let newReview = new Review(reviewData);
+            newReview.save((error) => {
+                if (error) {
+                    reject("There was an error creating review post: " + error);
+                }
+                else {
+                    resolve();
+                }
+            })
+        }
+    });
+}
+
+
+module.exports.checkUser = function (userData) {
+    return new Promise(function (resolve, reject) {
+        User.findOne({ userName: userData.userName })
+            .exec().then((foundUser) => {
+                //console.log(foundUser);
+                if (!foundUser) {
+                    reject("Unable to find user: " + userData.userName);
+                }
+                else if (foundUser.password != userData.password) {
+                    reject("Incorrect Password for user: " + userData.userName);
+                }
+                foundUser.loginHistory.push({ dateTime: (new Date()).toString(), userAgent: userData.userAgent });
+                foundUser.update(
+                    //console.log(foundUser),
+                    { userName: foundUser.userName },
+                    { $set: { loginHistory: foundUser.loginHistory } }
+                ).exec().then(() => {
+                    //console.log(foundUser);
+                    resolve(foundUser);
+                })
+                    .catch((err) => {
+                        reject("There was an error verifying the user: " + err);
+                    });
+            })
+            .catch(() => {
+                reject("Unable to find user: " + userData.userName);
+            });
+    });
+}

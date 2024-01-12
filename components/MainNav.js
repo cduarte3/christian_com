@@ -19,7 +19,7 @@ export default function MainNav() {
     }
     return (
         <>
-            <Navbar fixed="top" className="bg-body-primary navbar-light">
+            <Navbar fixed="top" className="navbar-light">
                 <Container fluid>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
