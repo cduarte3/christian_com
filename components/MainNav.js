@@ -26,22 +26,22 @@ export default function MainNav() {
                         <Nav className="justify-content-center flex-grow-1 pe-3 fs-5 nav-fill">
                             <Link href="/" passHref legacyBehavior>
                                 <Nav.Link>
-                                    Home
+                                    <b>Home</b>
                                 </Nav.Link>
                             </Link>
                             <Link href="resume" passHref legacyBehavior>
                                 <Nav.Link>
-                                    Resume
+                                    <b>Resume</b>
                                 </Nav.Link>
                             </Link>
                             <Link href="projects" passHref legacyBehavior>
                                 <Nav.Link href="projects">
-                                    Projects
+                                    <b>Projects</b>
                                 </Nav.Link>
                             </Link>
                             <Link href="feedback" passHref legacyBehavior>
                                 <Nav.Link href="feedback">
-                                    Feedback Board
+                                    <b>Feedback Board</b>
                                 </Nav.Link>
                             </Link>
                         </Nav>

@@ -35,8 +35,8 @@ export default function Home() {
         <h1>School</h1>
         <Image src="https://polytechnicscanada.ca/wp-content/uploads/2021/02/Seneca-4.png" alt="Seneca College" className="imageSchool"></Image>
         <h4><span className="tab"></span>
-          Currently I am 20 years old and am attending Seneca College at the Newnham Campus halfway through
-          my third year of studies.
+          Currently I am 20 years old and am attending Seneca College at the Newnham Campus well into
+          my third year of studies with a 3.7 GPA.
           <br/><br/>
           <span className="tab"></span>
           The program I am enrolled in is the (BSD) Honours Bachelor of Technology - Software Development Program. A 4 year course, in which I intend to
@@ -44,16 +44,17 @@ export default function Home() {
         </h4>
       </div>
       <div className="interests">
-        <h1>Interests</h1>
+        <h1>Interests and Skills</h1>
         <h4>
           As of late, my major interests have been any type of physical activities. These include going to the gym 4-5 times a week, and playing mens league soccer 1-2 times a week.
           <br/><br/>
-          Aside from physical activities I enjoy watching movies and tv shows, playing video games, and hanging out with friends. Notably I enjoy horror, thriller, comedy, or superhero movies. I also
-          collect comic books, mainly spider-man comics, and I also enjoy anything to do with star wars.
+          Of my skills that I have learned in my program I have listed the following (but may be missing some)
           <br/><br/>
-          I do enjoy programming, and working on frontend or backend of software, but I also enjoy physical aspects as well like when I recently built my own PC.
-          Currently, I do not have a lot of projects to my name, but I am actively working on that and they will be showcased in this website, as well as this site also
-          being one of my projects to showcase my skills. Everything done on this site has been done from scratch and solely by me.
+          Languages: C, C++, CSS, HTML, Javascript, Python
+          <br/><br/>
+          Frameworks: React, Next.js, Parcel, Docker, Bootstrap, Express.js
+          <br/><br/>
+          Database: MongoDB, some basic SQL, some AWS dynamoDB and other services
         </h4>
       </div>
     </>
