@@ -97,8 +97,7 @@ export default function Projects() {
               ></Image>
               <h5 className="card-title">Coming Soon</h5><hr/>
               <p className="card-text">
-                Currently working on more projects Projects will be added here
-                when complete, visit my github in the meantime
+                Visit my Github in the meantime while I work on other projects, Source Code for this site can also be found there.
               </p>
               <footer className="cardFooter">
                 <a
